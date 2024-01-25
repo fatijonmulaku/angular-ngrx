@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { Component, OnInit } from '@angular/core'
+import { RouterModule } from '@angular/router'
+import { NxWelcomeComponent } from './nx-welcome.component'
 
 @Component({
   standalone: true,
@@ -9,6 +9,10 @@ import { NxWelcomeComponent } from './nx-welcome.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  title = 'angular-monorepo';
+export class AppComponent implements OnInit {
+  ngOnInit(): void {
+    this.title = 'false';
+  }
+
+  title = 'angular-monorepo'
 }
