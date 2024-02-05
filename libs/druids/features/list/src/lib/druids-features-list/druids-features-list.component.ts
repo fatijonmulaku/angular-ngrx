@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common'
 import { Store } from '@ngrx/store'
 import { DruidsActions, druidsFeature } from '@angular-monorepo/druids/data-access'
 import { Druid } from '@angular-monorepo/data-access'
-import { of } from 'rxjs'
 
 @Component({
   selector: 'angular-monorepo-druids-features-list',
