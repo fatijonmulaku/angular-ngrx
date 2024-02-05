@@ -1,0 +1,7 @@
+<ul>
+  @for (druids of allDruids$ | async; track trackBy($index, druids)) {
+    <li>
+      {{druids.name}}
+    </li>
+  }
+</ul>
