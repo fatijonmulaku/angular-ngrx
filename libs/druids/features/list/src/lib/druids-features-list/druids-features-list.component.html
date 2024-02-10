@@ -1,7 +1,28 @@
+<form [formGroup]="druidFormGroup" (ngSubmit)="onAddDruid(druidFormGroup)">
+  <input formControlName="id" type="text">
+  <input formControlName="name" type="text">
+  <button type="submit">Add Druid</button>
+</form>
 <ul>
-  @for (druids of allDruids$ | async; track trackBy($index, druids)) {
-    <li>
-      {{druids.name}}
-    </li>
+  @for (druid of allDruids$ | async; track druid.id) {
+    <div class="d-flex">
+      <li>
+        {{ druid.id + ' - ' + druid.name }}
+        <ul>
+          @for (spell of druid.spells.entities | keyvalue; track spell.value?.id) {
+            <div class="d-flex">
+              <li>{{ spell.value?.id + ' - ' + spell.value?.name }}</li>
+              <button (click)="onRemoveSpell(druid.id, spell.value?.id)">Remove Spell</button>
+            </div>
+          }
+        </ul>
+      </li>
+      <form [formGroup]="spellFormGroup" (ngSubmit)="onAddSpell(druid.id, spellFormGroup)">
+        <input formControlName="id" type="text">
+        <input formControlName="name" type="text">
+        <button type="submit">Add spell</button>
+      </form>
+      <button (click)="onRemoveDruid(druid.id)">Remove Druid</button>
+    </div>
   }
 </ul>
