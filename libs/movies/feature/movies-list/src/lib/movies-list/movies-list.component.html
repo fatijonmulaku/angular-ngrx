@@ -1,0 +1,5 @@
+<div class="cards">
+  @for (movie of movies$ | async; track movie.id) {
+    <angular-monorepo-movie class="col-4" [movie]="movie" />
+  }
+</div>
