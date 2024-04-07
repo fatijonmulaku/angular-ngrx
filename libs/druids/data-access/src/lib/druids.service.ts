@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 import { delay, Observable, of } from 'rxjs'
-import { Druid } from '@angular-monorepo/data-access'
+import { Druid } from '@angular-monorepo/shared/data-access'
 import { spellEntityAdapter } from './+state/druids.state'
 
 @Injectable({ providedIn: 'root' })

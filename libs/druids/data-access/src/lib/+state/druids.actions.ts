@@ -1,5 +1,5 @@
 import { createActionGroup, emptyProps, props } from '@ngrx/store'
-import { Druid, Spell } from '@angular-monorepo/data-access'
+import { Druid, Spell } from '@angular-monorepo/shared/data-access'
 
 export const DruidsActions = createActionGroup({
   source: 'Druids',

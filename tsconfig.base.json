@@ -15,7 +15,7 @@
         "skipDefaultLibCheck": true,
         "baseUrl": ".",
         "paths": {
-            "@angular-monorepo/data-access": [
+            "@angular-monorepo/shared/data-access": [
                 "libs/shared/data-access/src/index.ts"
             ],
             "@angular-monorepo/druids/data-access": [

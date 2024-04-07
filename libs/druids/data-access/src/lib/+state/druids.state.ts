@@ -1,6 +1,6 @@
 import { createFeature, createReducer, on } from '@ngrx/store'
 import { DruidsActions } from './druids.actions'
-import { Druid, Spell } from '@angular-monorepo/data-access'
+import { Druid, Spell } from '@angular-monorepo/shared/data-access'
 import { createEntityAdapter, EntityAdapter } from '@ngrx/entity'
 
 const druidEntityAdapter: EntityAdapter<Druid> = createEntityAdapter<Druid>()
