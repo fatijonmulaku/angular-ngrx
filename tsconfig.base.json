@@ -10,11 +10,42 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2020", "dom"],
+    "lib": [
+      "es2020",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@angular-monorepo/book-app/data-access": [
+        "libs/book-app/data-access/src/index.ts"
+      ],
+      "@angular-monorepo/book-app/feature/books-list": [
+        "libs/book-app/feature/books-list/src/index.ts"
+      ],
+      "@angular-monorepo/book-app/ui/book": [
+        "libs/book-app/ui/book/src/index.ts"
+      ],
+      "@angular-monorepo/book-app/ui/book-filter": [
+        "libs/book-app/ui/book-filter/src/index.ts"
+      ],
+      "@angular-monorepo/todo-app/data-access": [
+        "libs/todo-app/data-access/src/index.ts"
+      ],
+      "@angular-monorepo/shared/data-access": [
+        "libs/shared/data-access/src/index.ts"
+      ],
+      "@angular-monorepo/todo-app/ui/todo": [
+        "libs/todo-app/ui/todo/src/index.ts"
+      ],
+      "@angular-monorepo/todo-app/feature/todo-list": [
+        "libs/todo-app/feature/todo-list/src/index.ts"
+      ]
+    }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }
