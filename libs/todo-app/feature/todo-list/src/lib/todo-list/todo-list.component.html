@@ -6,7 +6,7 @@
   <div class="todo-actions">
     <input (change)="checkAll($event)"
            [checked]="store.allChecked()"
-           [indeterminate]="!store.allChecked() && store.intermediate()"
+           [indeterminate]="store.indeterminate()"
            type="checkbox">
     <label>Select All</label>
     <button (click)="removeAll()">Remove All</button>
