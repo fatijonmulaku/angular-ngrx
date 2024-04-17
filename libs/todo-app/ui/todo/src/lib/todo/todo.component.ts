@@ -2,8 +2,6 @@ import { Component, inject, Input } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms'
 import { Todo, TodoStore } from '@angular-monorepo/todo-app/data-access'
-import { patchState } from '@ngrx/signals'
-import { removeEntity, updateEntity } from '@ngrx/signals/entities'
 
 @Component({
   selector: 'angular-monorepo-todo',
@@ -17,10 +15,10 @@ export class TodoComponent {
   private readonly store = inject(TodoStore)
 
   onRemove(id: string) {
-    patchState(this.store, removeEntity(id))
+    this.store.remove(id)
   }
 
   check(id: string, $event: Event) {
-    patchState(this.store, updateEntity({ id, changes: { checked: (<HTMLInputElement>$event.target).checked } }))
+    this.store.check(id, (<HTMLInputElement>$event.target).checked)
   }
 }

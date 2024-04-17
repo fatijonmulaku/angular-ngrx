@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms'
 import { TodoComponent } from '@angular-monorepo/todo-app/ui/todo'
 import { TodoStore } from '@angular-monorepo/todo-app/data-access'
-import { patchState } from '@ngrx/signals'
-import { addEntity, removeAllEntities, updateAllEntities } from '@ngrx/signals/entities'
 
 @Component({
   selector: 'angular-monorepo-todo-list',
@@ -19,18 +17,14 @@ export class TodoListComponent {
   name: string = ''
 
   onAdd(name: string) {
-    patchState(this.store, addEntity({ id: this.generateId(), name, checked: false }))
+    this.store.add(name)
   }
 
   removeAll() {
-    patchState(this.store, removeAllEntities())
+    this.store.removeAll()
   }
 
   checkAll($event: Event) {
-    patchState(this.store, updateAllEntities({ checked: (<HTMLInputElement>$event.target).checked }))
-  }
-
-  private generateId(): string {
-    return crypto.randomUUID()
+    this.store.checkAll((<HTMLInputElement>$event.target).checked)
   }
 }
