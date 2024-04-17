@@ -1,5 +1,5 @@
 import { Book } from '@angular-monorepo/shared/data-access'
-import { patchState, signalStore, withComputed, withMethods, withState } from '@ngrx/signals'
+import { patchState, signalStore, withComputed, withHooks, withMethods, withState } from '@ngrx/signals'
 import { computed, inject } from '@angular/core'
 import { BooksService } from './books.service'
 import { rxMethod } from '@ngrx/signals/rxjs-interop'
@@ -45,5 +45,10 @@ export const BooksStore = signalStore(
       ),
     ),
   })),
+  withHooks({
+    onInit(store) {
+      store.loadAll(store.params)
+    }
+  })
 )
 

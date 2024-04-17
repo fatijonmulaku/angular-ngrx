@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core'
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { BooksStore } from '@angular-monorepo/book-app/data-access'
 import { BookComponent } from '@angular-monorepo/book-app/ui/book'
@@ -13,10 +13,6 @@ import { BookFilterComponent } from '@angular-monorepo/book-app/ui/book-filter'
   providers: [BooksStore],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class BooksListComponent implements OnInit {
+export class BooksListComponent {
   readonly store = inject(BooksStore)
-
-  ngOnInit() {
-    this.store.loadAll(this.store.params)
-  }
 }
