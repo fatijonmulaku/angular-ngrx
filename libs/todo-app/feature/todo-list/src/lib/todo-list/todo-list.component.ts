@@ -20,8 +20,16 @@ export class TodoListComponent {
     this.store.add(name)
   }
 
+  onRemove(id: string) {
+    this.store.remove(id)
+  }
+
   removeAll() {
     this.store.removeAll()
+  }
+
+  onCheck({id, checked}: { id: string; checked: boolean }) {
+    this.store.check(id, checked)
   }
 
   checkAll($event: Event) {

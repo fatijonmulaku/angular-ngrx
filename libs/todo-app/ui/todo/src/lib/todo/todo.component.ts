@@ -1,7 +1,7 @@
-import { Component, inject, Input } from '@angular/core'
+import { Component, EventEmitter, Input, Output } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms'
-import { Todo, TodoStore } from '@angular-monorepo/todo-app/data-access'
+import { Todo } from '@angular-monorepo/todo-app/util'
 
 @Component({
   selector: 'angular-monorepo-todo',
@@ -12,13 +12,14 @@ import { Todo, TodoStore } from '@angular-monorepo/todo-app/data-access'
 })
 export class TodoComponent {
   @Input() todo: Todo | undefined
-  private readonly store = inject(TodoStore)
+  @Output() remove = new EventEmitter<string>()
+  @Output() check = new EventEmitter<{ id: string, checked: boolean }>()
 
   onRemove(id: string) {
-    this.store.remove(id)
+    this.remove.emit(id)
   }
 
-  check(id: string, $event: Event) {
-    this.store.check(id, (<HTMLInputElement>$event.target).checked)
+  onCheck(id: string, $event: Event) {
+    this.check.emit({ id, checked: (<HTMLInputElement>$event.target).checked })
   }
 }

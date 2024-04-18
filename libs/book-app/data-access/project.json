@@ -3,7 +3,7 @@
     "$schema": "../../../node_modules/nx/schemas/project-schema.json",
     "sourceRoot": "libs/book-app/data-access/src",
     "prefix": "angular-monorepo",
-    "tags": [],
+    "tags": ["type:data-access", "scope:book-app"],
     "projectType": "library",
     "targets": {
         "test": {

@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core'
 import { HttpClient, HttpParams } from '@angular/common/http'
-import { Book } from '@angular-monorepo/shared/data-access'
 import { Observable } from 'rxjs'
+import { Book } from '@angular-monorepo/book-app/util'
 
 const URL = 'https://freetestapi.com/api/v1/books'
 

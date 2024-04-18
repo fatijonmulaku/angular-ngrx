@@ -13,7 +13,9 @@
   </div>
   <ul class="todo-list">
     @for (todo of store.entities(); track todo.id) {
-      <angular-monorepo-todo [todo]="todo" />
+      <angular-monorepo-todo (remove)="onRemove($event)"
+                             (check)="onCheck($event)"
+                             [todo]="todo" />
     }
   </ul>
 </div>

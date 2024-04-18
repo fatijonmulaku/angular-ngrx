@@ -3,7 +3,7 @@
     "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
     "sourceRoot": "libs/todo-app/feature/todo-list/src",
     "prefix": "angular-monorepo",
-    "tags": [],
+    "tags": ["type:feature", "scope:todo-app"],
     "projectType": "library",
     "targets": {
         "test": {

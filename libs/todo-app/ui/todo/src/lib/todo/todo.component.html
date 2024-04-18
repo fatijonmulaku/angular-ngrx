@@ -2,8 +2,14 @@
   <div class="todo-card">
     <div class="todo-content">
       <span>{{ todo.name }}</span>
-      <input type="checkbox" [checked]="todo.checked" (change)="check(todo.id, $event)" class="todo-checkbox">
-      <button (click)="onRemove(todo.id)" class="remove-btn">Remove</button>
+      <input type="checkbox"
+             [checked]="todo.checked"
+             (change)="onCheck(todo.id, $event)"
+             class="todo-checkbox">
+      <button (click)="onRemove(todo.id)"
+              class="remove-btn">
+        Remove
+      </button>
     </div>
   </div>
 }

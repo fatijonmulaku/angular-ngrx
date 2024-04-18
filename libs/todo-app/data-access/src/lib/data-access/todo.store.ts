@@ -7,8 +7,8 @@ import {
   updateEntity,
   withEntities,
 } from '@ngrx/signals/entities'
-import { Todo } from './todo.interface'
 import { computed } from '@angular/core'
+import { Todo } from '@angular-monorepo/todo-app/util'
 
 export const TodoStore = signalStore(
   withEntities<Todo>(),
