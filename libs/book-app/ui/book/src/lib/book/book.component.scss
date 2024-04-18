@@ -36,4 +36,12 @@
     margin-top: 10px;
     color: #333;
   }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.selected {
+    background-color: #eee;
+  }
 }

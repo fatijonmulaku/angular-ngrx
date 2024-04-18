@@ -1,5 +1,5 @@
 @if (book) {
-  <div class="book-card">
+  <div (click)="onSelect(book.id)" [class.selected]="selectedEntity?.id === book.id" class="book-card">
     <img alt="{{ book.title }} Cover"
          priority="" class="book-cover"
          height="1000"
