@@ -12,8 +12,10 @@ import { Todo } from '@angular-monorepo/todo-app/util'
 })
 export class TodoComponent {
   @Input() todo: Todo | undefined
+  @Input() isSelected: boolean = false;
   @Output() remove = new EventEmitter<string>()
   @Output() check = new EventEmitter<{ id: string, checked: boolean }>()
+  @Output() selectTodo = new EventEmitter<string | null>()
 
   onRemove(id: string) {
     this.remove.emit(id)
@@ -21,5 +23,9 @@ export class TodoComponent {
 
   onCheck(id: string, $event: Event) {
     this.check.emit({ id, checked: (<HTMLInputElement>$event.target).checked })
+  }
+
+  onSelect(id: string) {
+    this.selectTodo.emit(this.isSelected ? null: id);
   }
 }

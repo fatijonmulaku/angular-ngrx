@@ -31,4 +31,11 @@
       }
     }
   }
+
+  &.selected {
+    background-color: #eee;
+  }
+  &:hover {
+    cursor: pointer;
+  }
 }

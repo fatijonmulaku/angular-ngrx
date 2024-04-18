@@ -1,6 +1,6 @@
 import { patchState, signalStore, withComputed, withMethods } from '@ngrx/signals'
 import {
-  addEntity,
+  addEntity, EntityId,
   removeAllEntities,
   removeEntity,
   updateAllEntities,
@@ -9,9 +9,11 @@ import {
 } from '@ngrx/signals/entities'
 import { computed } from '@angular/core'
 import { Todo } from '@angular-monorepo/todo-app/util'
+import { setSelectedEntity, withSelectedEntity } from '@angular-monorepo/shared/data-access'
 
 export const TodoStore = signalStore(
   withEntities<Todo>(),
+  withSelectedEntity<Todo>(),
   withComputed(({ entities, ids }) => ({
     allChecked: computed(() => ids().length && entities().every(entity => entity.checked)),
   })),
@@ -34,5 +36,8 @@ export const TodoStore = signalStore(
     checkAll(checked: boolean) {
       patchState(store, updateAllEntities({ checked }))
     },
+    selectEntity(id: EntityId | null) {
+      patchState(store, setSelectedEntity(id))
+    }
   })),
 )

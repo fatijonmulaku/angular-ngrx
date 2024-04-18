@@ -1,5 +1,5 @@
 @if (todo) {
-  <div class="todo-card">
+  <div (click)="onSelect(todo.id)" [class.selected]="isSelected" class="todo-card">
     <div class="todo-content">
       <span>{{ todo.name }}</span>
       <input type="checkbox"
