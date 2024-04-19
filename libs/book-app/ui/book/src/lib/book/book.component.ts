@@ -12,10 +12,10 @@ import { EntityId } from '@ngrx/signals/entities'
 })
 export class BookComponent {
   @Input() book: Book | undefined
-  @Input() selectedEntity: Book | null = null
+  @Input() isSelected: boolean = false;
   @Output() selectBook = new EventEmitter<EntityId | null>()
 
   onSelect(id: EntityId | null) {
-    this.selectBook.emit(this.selectedEntity ? null : id)
+    this.selectBook.emit(this.isSelected ? null : id)
   }
 }
