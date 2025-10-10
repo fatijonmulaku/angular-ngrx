@@ -1,28 +1,31 @@
-<form [formGroup]="druidFormGroup" (ngSubmit)="onAddDruid(druidFormGroup)">
-  <input formControlName="id" type="text">
-  <input formControlName="name" type="text">
+<form [formGroup]="druidFormGroup" (ngSubmit)="onAddDruid(druidFormGroup)" class="form-inline">
+  <input formControlName="id" type="text" placeholder="Druid ID">
+  <input formControlName="name" type="text" placeholder="Druid Name">
   <button type="submit">Add Druid</button>
 </form>
-<ul>
+
+<div class="druid-container">
   @for (druid of allDruids$ | async; track druid.id) {
-    <div class="d-flex">
-      <li>
-        {{ druid.id + ' - ' + druid.name }}
-        <ul>
-          @for (spell of druid.spells.entities | keyvalue; track spell.value?.id) {
-            <div class="d-flex">
-              <li>{{ spell.value?.id + ' - ' + spell.value?.name }}</li>
-              <button (click)="onRemoveSpell(druid.id, spell.value?.id)">Remove Spell</button>
-            </div>
-          }
-        </ul>
-      </li>
-      <form [formGroup]="spellFormGroup" (ngSubmit)="onAddSpell(druid.id, spellFormGroup)">
-        <input formControlName="id" type="text">
-        <input formControlName="name" type="text">
-        <button type="submit">Add spell</button>
+    <div class="druid-card">
+      <div class="druid-header">
+        <span>{{ druid.id }} — {{ druid.name }}</span>
+        <button class="danger" (click)="onRemoveDruid(druid.id)">Remove Druid</button>
+      </div>
+
+      <ul class="spell-list">
+        @for (spell of druid.spells.entities | keyvalue; track spell.value?.id) {
+          <li class="spell-item">
+            <span>{{ spell.value?.id }} — {{ spell.value?.name }}</span>
+            <button class="danger" (click)="onRemoveSpell(druid.id, spell.value?.id)">Remove Spell</button>
+          </li>
+        }
+      </ul>
+
+      <form [formGroup]="spellFormGroup" (ngSubmit)="onAddSpell(druid.id, spellFormGroup)" class="form-inline">
+        <input formControlName="id" type="text" placeholder="Spell ID">
+        <input formControlName="name" type="text" placeholder="Spell Name">
+        <button type="submit">Add Spell</button>
       </form>
-      <button (click)="onRemoveDruid(druid.id)">Remove Druid</button>
     </div>
   }
-</ul>
+</div>
