@@ -1,0 +1,47 @@
+.book-card {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+
+  .book-cover {
+    width: 150px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 8px;
+  }
+
+  .book-details {
+    flex: 1;
+  }
+
+  .book-title {
+    font-size: 24px;
+    margin: 0;
+  }
+
+  .book-author {
+    margin-top: 5px;
+    font-style: italic;
+    color: #666;
+  }
+
+  .book-year, .book-genre {
+    margin: 5px 0;
+    color: #888;
+  }
+
+  .book-description {
+    margin-top: 10px;
+    color: #333;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.selected {
+    background-color: #eee;
+  }
+}

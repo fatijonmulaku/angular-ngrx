@@ -1,0 +1,6 @@
+<angular-monorepo-book-filter (paramsChanged)="store.updateParams($event)"
+                              [booksCount]="store.booksCount()" />
+@for (book of store.entities(); track book.id) {
+  <angular-monorepo-book (selectBook)="this.store.selectEntity($event)"
+                         [isSelected]="store.selectedEntity()?.id === book.id" [book]="book" />
+}

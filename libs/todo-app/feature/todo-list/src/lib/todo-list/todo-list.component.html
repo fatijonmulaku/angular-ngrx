@@ -1,0 +1,24 @@
+<div class="todo-container">
+  <div class="todo-input">
+    <input [(ngModel)]="name" placeholder="Add a new todo" type="text">
+    <button (click)="onAdd(name)">Add</button>
+  </div>
+  <div class="todo-actions">
+    <input (change)="checkAll($event)"
+           [checked]="store.allChecked()"
+           [indeterminate]="store.indeterminate()"
+           type="checkbox">
+    <label>Select All</label>
+    <button (click)="removeAll()">Remove All</button>
+  </div>
+  <ul class="todo-list">
+    @for (todo of store.entities(); track todo.id) {
+      <angular-monorepo-todo (remove)="onRemove($event)"
+                             (check)="onCheck($event)"
+                             (selectTodo)="store.selectEntity($event)"
+                             [isSelected]="store.selectedEntity()?.id === todo.id"
+                             [todo]="todo" />
+    }
+  </ul>
+</div>
+

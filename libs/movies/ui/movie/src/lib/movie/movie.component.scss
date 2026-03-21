@@ -1,0 +1,46 @@
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  background-color: #fff;
+
+  .poster {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+
+    .name {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .rating {
+      color: #f39c12;
+    }
+  }
+
+  .favorite {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+
+    svg {
+      cursor: pointer;
+      fill: #e74c3c;
+      transition: fill 0.3s;
+
+      &:hover {
+        fill: #c0392b;
+      }
+    }
+  }
+}
