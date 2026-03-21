@@ -31,6 +31,14 @@
               {
                 "sourceTag": "scope:shared",
                 "onlyDependOnLibsWithTags": ["scope:shared"]
+              },
+              {
+                "sourceTag": "scope:book-app",
+                "onlyDependOnLibsWithTags": ["scope:book-app", "scope:shared"]
+              },
+              {
+                "sourceTag": "scope:todo-app",
+                "onlyDependOnLibsWithTags": ["scope:todo-app", "scope:shared"]
               }
             ]
           }

@@ -16,7 +16,7 @@
         "baseUrl": ".",
         "paths": {
             "@angular-monorepo/movie": [
-              "libs/movies/ui/movie/src/index.ts"
+                "libs/movies/ui/movie/src/index.ts"
             ],
             "@angular-monorepo/movies/data-access": [
                 "libs/movies/data-access/src/index.ts"
@@ -26,6 +26,33 @@
             ],
             "@angular-monorepo/shared/data-access": [
                 "libs/shared/data-access/src/index.ts"
+            ],
+            "@angular-monorepo/book-app/data-access": [
+                "libs/book-app/data-access/src/index.ts"
+            ],
+            "@angular-monorepo/book-app/feature/books-list": [
+                "libs/book-app/feature/books-list/src/index.ts"
+            ],
+            "@angular-monorepo/book-app/ui/book": [
+                "libs/book-app/ui/book/src/index.ts"
+            ],
+            "@angular-monorepo/book-app/ui/book-filter": [
+                "libs/book-app/ui/book-filter/src/index.ts"
+            ],
+            "@angular-monorepo/book-app/util": [
+                "libs/book-app/util/src/index.ts"
+            ],
+            "@angular-monorepo/todo-app/data-access": [
+                "libs/todo-app/data-access/src/index.ts"
+            ],
+            "@angular-monorepo/todo-app/feature/todo-list": [
+                "libs/todo-app/feature/todo-list/src/index.ts"
+            ],
+            "@angular-monorepo/todo-app/ui/todo": [
+                "libs/todo-app/ui/todo/src/index.ts"
+            ],
+            "@angular-monorepo/todo-app/util": [
+                "libs/todo-app/util/src/index.ts"
             ]
         }
     },

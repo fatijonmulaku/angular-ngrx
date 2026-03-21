@@ -1,0 +1,11 @@
+<div class="book-filter">
+  <input (ngModelChange)="search = $event; paramsChanged.emit({search, order})"
+         [ngModel]="search"
+         type="text">
+  <select (ngModelChange)="order = $event; paramsChanged.emit({search, order})"
+          [ngModel]="order">
+    <option value="asc">Ascending</option>
+    <option value="dec">Descending</option>
+  </select>
+  <p>Total: {{ booksCount }}</p>
+</div>

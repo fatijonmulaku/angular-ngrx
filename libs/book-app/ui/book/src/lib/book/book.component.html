@@ -1,0 +1,16 @@
+@if (book) {
+  <div (click)="onSelect(book.id)" [class.selected]="isSelected" class="book-card">
+    <img alt="{{ book.title }} Cover"
+         priority="" class="book-cover"
+         height="1000"
+         ngSrc="{{ book.cover_image }}"
+         width="667">
+    <div class="book-details">
+      <h2 class="book-title">{{ book.title }}</h2>
+      <p class="book-author">By {{ book.author }}</p>
+      <p class="book-year">{{ book.publication_year }}</p>
+      <p class="book-genre">{{ book.genre.join(', ') }}</p>
+      <p class="book-description">{{ book.description }}</p>
+    </div>
+  </div>
+}

@@ -1,0 +1,21 @@
+{
+    "name": "book-app-feature-books-list",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/book-app/features/books-list/src",
+    "prefix": "angular-monorepo",
+    "tags": ["type:feature", "scope:book-app"],
+    "projectType": "library",
+    "targets": {
+        "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+            "options": {
+                "jestConfig": "libs/book-app/features/books-list/jest.config.ts"
+            }
+        },
+        "lint": {
+            "executor": "@nx/eslint:lint",
+            "outputs": ["{options.outputFile}"]
+        }
+    }
+}

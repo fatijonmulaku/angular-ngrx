@@ -3,7 +3,7 @@
     "$schema": "../../../node_modules/nx/schemas/project-schema.json",
     "sourceRoot": "libs/shared/data-access/src",
     "prefix": "angular-monorepo",
-    "tags": [],
+    "tags": ["type:data-access", "scope:shared"],
     "projectType": "library",
     "targets": {
         "test": {
