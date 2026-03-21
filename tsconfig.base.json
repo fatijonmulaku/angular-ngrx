@@ -14,7 +14,20 @@
         "skipLibCheck": true,
         "skipDefaultLibCheck": true,
         "baseUrl": ".",
-        "paths": {}
+        "paths": {
+            "@angular-monorepo/movie": [
+              "libs/movies/ui/movie/src/index.ts"
+            ],
+            "@angular-monorepo/movies/data-access": [
+                "libs/movies/data-access/src/index.ts"
+            ],
+            "@angular-monorepo/movies/movies-list": [
+                "libs/movies/feature/movies-list/src/index.ts"
+            ],
+            "@angular-monorepo/shared/data-access": [
+                "libs/shared/data-access/src/index.ts"
+            ]
+        }
     },
     "exclude": ["node_modules", "tmp"]
 }

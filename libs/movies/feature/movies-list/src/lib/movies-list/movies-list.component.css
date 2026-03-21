@@ -1,0 +1,12 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10px; /* Adjust as needed */
+  margin-right: -10px; /* Adjust as needed */
+}
+
+.col-4 {
+  flex: 0 0 25%;
+  max-width: 25%;
+  padding: 0 10px;
+}
