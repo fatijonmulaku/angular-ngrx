@@ -39,6 +39,10 @@
               {
                 "sourceTag": "scope:todo-app",
                 "onlyDependOnLibsWithTags": ["scope:todo-app", "scope:shared"]
+              },
+              {
+                "sourceTag": "scope:druid-tracker",
+                "onlyDependOnLibsWithTags": ["scope:druid-tracker", "scope:shared"]
               }
             ]
           }

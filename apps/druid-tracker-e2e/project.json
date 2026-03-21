@@ -1,0 +1,30 @@
+{
+    "name": "druid-tracker-e2e",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "application",
+    "sourceRoot": "apps/druid-tracker-e2e/src",
+    "targets": {
+        "e2e": {
+            "executor": "@nx/cypress:cypress",
+            "options": {
+                "cypressConfig": "apps/druid-tracker-e2e/cypress.config.ts",
+                "testingType": "e2e",
+                "devServerTarget": "druid-tracker:serve:development"
+            },
+            "configurations": {
+                "production": {
+                    "devServerTarget": "druid-tracker:serve:production"
+                },
+                "ci": {
+                    "devServerTarget": "druid-tracker:serve-static"
+                }
+            }
+        },
+        "lint": {
+            "executor": "@nx/eslint:lint",
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "tags": [],
+    "implicitDependencies": ["druid-tracker"]
+}

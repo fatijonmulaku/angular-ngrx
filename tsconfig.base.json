@@ -53,6 +53,12 @@
             ],
             "@angular-monorepo/todo-app/util": [
                 "libs/todo-app/util/src/index.ts"
+            ],
+            "@angular-monorepo/druids/data-access": [
+                "libs/druids/data-access/src/index.ts"
+            ],
+            "@angular-monorepo/druids/features/list": [
+                "libs/druids/features/list/src/index.ts"
             ]
         }
     },

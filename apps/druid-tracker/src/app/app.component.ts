@@ -9,9 +9,5 @@ import { RouterModule } from '@angular/router'
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-<<<<<<<< HEAD:apps/todo-app/src/app/app.component.ts
-  title = 'todo-app'
-========
   title = 'druid-tracker'
->>>>>>>> origin/ngrx-store:apps/druid-tracker/src/app/app.component.ts
 }
